@@ -15,7 +15,7 @@ node {
     //     sh 'vendor/bin/codecept run'
     // }
     stage("docker-compose"){
-        sh 'ls -la'
+        sh 'ls'
         sh 'docker-compose up'
     }
 }
