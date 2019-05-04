@@ -7,6 +7,7 @@ node('master') {
             sh "composer install"
             // sh "cp .env.example .env"
             // sh "php artisan key:generate"
+            sh 'docker-compose up'
         }
 
         // stage('test') {
@@ -16,7 +17,7 @@ node('master') {
         stage('deploy') {
             // ansible-playbook -i ./ansible/hosts ./ansible/deploy.yml
             sh "echo 'WE ARE DEPLOYING'"
-            sh 'docker-compose up'
+            
         }
     } catch(error) {
         throw error
