@@ -2,26 +2,26 @@ version: '3'
 services:
 
   #PHP
-  api:
+  app2:
     build:
       context: .
       dockerfile: Dockerfile
     image: api
-    container_name: app
+    container_name: app2
     restart: always
     ports:
      - "8000:80"
     environment:
-      SERVICE_NAME: app
+      SERVICE_NAME: app2
       SERVICE_TAGS: dev
     networks:
       - app-network
 
 
   #MySQL
-  db:
+  db2:
     image: mysql:5.7.22
-    container_name: db
+    container_name: db2
     restart: always
     ports:
       - "3306:3306"
@@ -33,7 +33,7 @@ services:
     expose:
       - '3306'
     volumes:
-      - dbdata:/var/lib/mysql/
+      - dbdata2:/var/lib/mysql/
     networks:
       - app-network
 #Redes
@@ -43,5 +43,5 @@ networks:
 
 #Volumenes
 volumes:
-  dbdata:
+  dbdata2:
     driver: local
