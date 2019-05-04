@@ -19,6 +19,9 @@ node('master') {
             sh "echo 'WE ARE DEPLOYING'"
             
         }
+        stage('test'){
+            sh '/jmeter/apache-jmeter-5.1.1/bin/jmeter -n -t ayd2.jmx'
+        }
     } catch(error) {
         throw error
         sh 'sudo docker-compose down'
