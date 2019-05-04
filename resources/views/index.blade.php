@@ -67,6 +67,7 @@
         </style>
     </head>
     <body>
+        hola mundo
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#anadir">Nuevo Cuentahabiente</button>
         @include('anadir')
 
