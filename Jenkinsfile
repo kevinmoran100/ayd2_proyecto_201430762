@@ -21,6 +21,7 @@ node('master') {
         }
     } catch(error) {
         throw error
+        sh 'sudo docker-compose down'
     } finally {
 
     }
