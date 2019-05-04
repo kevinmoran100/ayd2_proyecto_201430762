@@ -9,13 +9,14 @@ node('master') {
             // sh "php artisan key:generate"
         }
 
-        stage('test') {
-            sh "./vendor/bin/phpunit"
-        }
+        // stage('test') {
+        //     sh "./vendor/bin/phpunit"
+        // }
 
         stage('deploy') {
             // ansible-playbook -i ./ansible/hosts ./ansible/deploy.yml
             sh "echo 'WE ARE DEPLOYING'"
+            sh 'docker-compose up'
         }
     } catch(error) {
         throw error
