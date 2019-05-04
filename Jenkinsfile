@@ -7,7 +7,7 @@ node('master') {
             sh "composer install"
             // sh "cp .env.example .env"
             // sh "php artisan key:generate"
-            sh 'sudo docker-compose up'
+            sh 'sudo docker-compose up -d'
         }
 
         // stage('test') {
